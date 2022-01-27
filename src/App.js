@@ -29,6 +29,7 @@ function App() {
   
   const stopScanning=()=>{
     setMode(false)
+    setDecoded('');
   }
 
 
