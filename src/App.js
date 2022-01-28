@@ -17,8 +17,8 @@ function App() {
   const [decoded, setDecoded]=useState('');
   
   
-  let obj=new Html5Qrcode("reader");
-
+  // let obj=new Html5Qrcode("reader");
+let obj =null;
 
   const scanQR=(result)=>{
     if(result){
@@ -27,6 +27,7 @@ function App() {
   }
 
   const startScanning=()=>{
+    obj=new Html5Qrcode("reader");
     startScanner(obj);
   }
   
