@@ -4,6 +4,9 @@ import {Grid, Container, Card, CardContent, makeStyles, Button} from '@material-
 import QrReader from 'react-qr-reader';
 import { useState } from 'react';
 import { render } from 'react-dom';
+import {startScanner,stopScanner} from './Modules/html5qr';
+// import QrCode from './Modules/QrCode';
+import { Html5Qrcode } from 'html5-qrcode';
 
 function App() {
 
@@ -12,10 +15,10 @@ function App() {
   const [mode, setMode] = useState(false);
 
   const [decoded, setDecoded]=useState('');
+  
+  
+  let obj=new Html5Qrcode("reader");
 
-  const errorHandler = (error)=>{
-    console.log(error);
-  }
 
   const scanQR=(result)=>{
     if(result){
@@ -24,15 +27,12 @@ function App() {
   }
 
   const startScanning=()=>{
-    setMode(true);
+    startScanner(obj);
   }
   
   const stopScanning=()=>{
-    setMode(false)
-    setDecoded('');
+    stopScanner(obj);
   }
-
-
 
   return (
     <Container className={classes.container}>
@@ -44,16 +44,7 @@ function App() {
         <CardContent>
           <Grid container spacing={2}>
             <Grid item xl={4} lg={4} sm={12} xs={12} >
-              {mode?<div><QrReader
-                delay={300}
-                style={{width:'100%'}}
-                onError={errorHandler}
-                onScan={scanQR}
-              />
-              <h3> Scanned Qr:{decoded} </h3>
-              </div>   
-              :null}
-
+            <div id="reader" width="600px"></div>
             </Grid>
           </Grid>
         </CardContent>
