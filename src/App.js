@@ -11,6 +11,19 @@ import { Html5Qrcode } from 'html5-qrcode';
 function App() {
 
   const classes = useStyles();
+  var camList=[];
+
+  Html5Qrcode
+  .getCameras()
+  .then(devices=>{
+      if(devices && devices.length){
+        camList=[...devices];
+      }
+  })
+  .catch(err=>{
+      console.log(err);
+  });
+
 
   const [mode, setMode] = useState(false);
 
@@ -48,6 +61,7 @@ let obj =null;
             <div id="reader" width="600px"></div>
             </Grid>
           </Grid>
+
         </CardContent>
       </Card>
     </Container>

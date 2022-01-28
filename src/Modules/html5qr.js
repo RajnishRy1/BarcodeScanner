@@ -38,7 +38,7 @@ Html5Qrcode.getCameras()
 const startScanner = (obj) =>{
     // let obj=new Html5Qrcode("reader");
     obj.start(
-        cameraID,
+        {facingMode:"environment"},
         {fps:10,
         qrbox:{ width: 250, height: 250 }
         },
