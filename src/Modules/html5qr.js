@@ -43,8 +43,9 @@ const startScanner = (obj) =>{
         qrbox:{ width: 250, height: 250 }
         },
         (decodedText, decodedResult)=>{
-            console.log(decodedText);
-            console.log(decodedResult);
+            // console.log(decodedText);
+            // console.log(decodedResult);
+            alert(decodedText);
         },
         (errorMessage)=>{
             // console.log(errorMessage);
