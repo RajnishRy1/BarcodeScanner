@@ -33,24 +33,23 @@ Html5Qrcode.getCameras()
     console.log(err);
 });
 
-
-
-const startScanner = (obj) =>{
+const startScanner = (obj,successCallback) =>{
     // let obj=new Html5Qrcode("reader");
+    // console.logobj.getState();
     obj.start(
         {facingMode:"environment"},
-        {fps:10,
+        {fps:20,
         qrbox:{ width: 250, height: 250 }
         },
-        (decodedText, decodedResult)=>{
-            // console.log(decodedText);
-            // console.log(decodedResult);
-            alert(decodedText);
-        },
+        successCallback
+        ,
         (errorMessage)=>{
             // console.log(errorMessage);
         }
     )
+    .then(()=>{
+        obj.pause();
+    })
     .catch(err=>{
         console.log(err);
     });

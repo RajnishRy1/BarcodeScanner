@@ -1,0 +1,23 @@
+th, td{
+    padding: 15px;
+    border-spacing:5px;
+}
+
+img{
+    width:20%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.share{
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+}
+
