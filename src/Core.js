@@ -10,24 +10,16 @@ import {useHistory} from 'react-router-dom';
 function Core() {
 
   const classes = useStyles();
-  const [decoded, setDecoded]=useState('');
   let obj =null;
-  const [decodedText,setResultText]=useState('');
-  const [imageUrl,setImageUrl] = useState('');
 
   useEffect(()=>{
-    if(decodedText==""){
     startScanning();
-    }
-    else{
-
-    }
   });
 
   const successCallback=(resText,Result)=>{
     var arr=resText.split("&");
     var code = arr[0].split("$");
-    var code=157589;
+    var code=1;
 
     stopScanning();
 

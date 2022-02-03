@@ -4,7 +4,7 @@ import image1 from './logo192.png'
 import './css/Card.css'
 import Share from './Modules/Share';
 
-const link = "http://10.50.1.7:7285/api/get/price/"
+const link = "https://jsonplaceholder.typicode.com/users/"
  
 const Product = () =>{
     const params=useParams();
@@ -17,9 +17,9 @@ const Product = () =>{
     fetch(link + params.id)
     .then(raw=>raw.json())
     .then((response)=>{
-      setName(response.data[0].product_name);
-      setRetailPrice(response.data[0].price);
-      setDiscountPrice(response.data[0].price - response.data[0].discount);  
+      setName(response.name);
+      setRetailPrice(response.address.zipcode);
+      setDiscountPrice(response.address.geo.lng);  
     })
     .catch((err)=>{
       console.log(err);
