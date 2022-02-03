@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import image1 from './logo192.png'
 import './css/Card.css'
 import Share from './Modules/Share';
+import { Button } from "@material-ui/core";
 
 const link = "https://jsonplaceholder.typicode.com/users/"
  
 const Product = () =>{
-    const params=useParams();
+    const params=useParams(); 
 
+    // useEffect(()=>{
+    //   const script = document.createElement("script");
+    //   script.src="/addtohomescreen.js";
+    //   script.async=true;
+    //   document.body.appendChild(script);
+    // });
     const [name,setName]=useState('');
     const [retailPrice,setRetailPrice]=useState('');
     const [discountPrice,setDiscountPrice]=useState('');
@@ -27,6 +34,9 @@ const Product = () =>{
 
     return(
       <div style={{border:'1px solid red'}} id='share'>
+        <script src="/addtohomescreejs">
+
+        </script>
           <img alt="img"src={image1}></img>
           <h3 style={{textAlign:'center'}}>{name}</h3>
           <table>
@@ -49,8 +59,8 @@ const Product = () =>{
           </table>
           <Share
                   label="share this deal!"
-                  title="deal"
-                  text="My web share adventures"
+                  title="Deal"
+                  text="Deal"
                   link={imageUrl}
           ></Share>
       </div>

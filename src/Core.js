@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import {startScanner,stopScanner} from './Modules/html5qr';
 import { Html5Qrcode } from 'html5-qrcode';
 import {useHistory} from 'react-router-dom';
-
+import './css/Card.css'
 
 function Core() {
 
@@ -67,6 +67,7 @@ function Core() {
             </CardContent>
             <div style={{borderSpacing:'5px'}}>
             <Button onClick={scanNow} variant="contained" color="primary">scan now</Button>
+            <button className='add-button'> Add </button>
           </div>
         </div>
       </Card>

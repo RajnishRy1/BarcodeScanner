@@ -6,7 +6,7 @@ function Share({ label, text, title, link }) {
     // const canonical = document.querySelector("link[rel=canonical]");
     // let url = canonical ? canonical.href : document.location.href;
     let url=link;
-    const shareDetails = { url, title, text };
+    const shareDetails = { url, title, text};
     const [showModal, setShowModal] = useState(false);
     const handleSharing = async () => {
       if (navigator.share) {
