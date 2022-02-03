@@ -68,6 +68,7 @@ function Core() {
             <div style={{borderSpacing:'5px'}}>
             <Button onClick={scanNow} variant="contained" color="primary">scan now</Button>
             <button className='add-button'> Add </button>
+            <button>Add Button</button>
           </div>
         </div>
       </Card>
